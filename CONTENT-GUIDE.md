@@ -1,6 +1,26 @@
-# Bruin Biotech Investing Website - Content Editing Guide
+# GUIDE TO EDITING CONTENT.
 
-This guide explains how to update the website content without any coding knowledge. All content is stored in simple text files that you can edit directly on GitHub.
+
+## read this first
+
+This guide explains how to update the website content without any coding knowledge. 
+
+All the (important) content in this website is stored in Markdown files (
+  essentially, a simpler version of a MS Word or Google Doc file
+). Markdown files are glorified text files that can be parsed easily; do not 
+be scared by them. there is no crazy syntax to memorize, just follow the rules
+I have written.
+
+To navigate to a particular directory, press on the folders in that order. 
+For instance, to navigate to the team members, first press on the content 
+folder, then the team folder, then the members folder. Then you will see a 
+list of markdown files of teammates.
+
+I have set up the site and its deployment to redeploy (redeployments take 3-4 mins) each time a change in content is detected (deleting an alumni, adding a 
+new class, updating a stock pitch, etc). Thus, the only thing you have to worry
+about is making those requisite edits (which I go into more detail below) – DO 
+NOT touch any other files. If the site fails to update or breaks entirely,
+contact Advay at [advayb2018 at gmail dot com].
 
 ## Table of Contents
 - [Getting Started with GitHub](#getting-started-with-github)
@@ -20,7 +40,7 @@ This guide explains how to update the website content without any coding knowled
 3. Click the **pencil icon** (Edit) in the top right corner of the file
 4. Make your changes
 5. Scroll down and click **"Commit changes"**
-6. Add a brief description of what you changed
+6. Add a brief description of what you changed (i.e added Fall '26 class)
 7. Click **"Commit changes"** again
 
 The website will automatically update within a few minutes after your changes are merged.
@@ -36,7 +56,8 @@ Stock pitches are stored in: `content/pitches/`
 1. Go to `content/pitches/` on GitHub
 2. Click **"Add file"** > **"Create new file"**
 3. Name your file: `company-ticker.md` (e.g., `pfizer-pfe.md`)
-4. Copy this template and fill in your information:
+4. Copy this template and fill in your information: (look at already existing 
+pitches if you're confused):
 
 ```markdown
 ---
@@ -242,21 +263,21 @@ After you commit changes on GitHub:
 
 1. **Automatic deployment**: Vercel will automatically detect changes and rebuild the site
 2. **Wait 2-5 minutes**: The deployment usually takes a few minutes
-3. **Check the site**: Visit the website to verify your changes appear correctly
+3. **Check the site**: Visit the website after ~10 mins to verify your changes appear correctly
 
 ### If Something Goes Wrong
 
-- **Build failed**: Check that your YAML formatting is correct (proper indentation, quotes around years)
-- **Content not showing**: Make sure the file extension is `.md`
+- **Build failed**: Check that your formatting is correct (proper indentation, quotes around years)
+- **Content not showing** (IMPORTANT): Make sure the file extension is `.md` 
 - **Images not loading**: Verify the path starts with `/team/` or `/pitches/`
 
-### Need Help?
+### HELP!?!??
 
-If you run into issues, reach out to the web team or check the deployment logs on Vercel.
+If you run into issues, reach out to the Advay at the email above.
 
 ---
 
-## Quick Reference: File Locations
+## ref: File Locations (browse to these places to edit the requisite content)
 
 | Content Type | Location |
 |-------------|----------|
