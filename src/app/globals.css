@@ -2,11 +2,11 @@
 
 /* Custom theme configuration */
 @theme inline {
-  /* Colors */
-  --color-primary: #7C3AED;
-  --color-primary-light: #A855F7;
-  --color-secondary: #14B8A6;
-  --color-secondary-light: #2DD4BF;
+  /* Colors - Red/Rose theme */
+  --color-primary: #E11D48;
+  --color-primary-light: #FB7185;
+  --color-secondary: #F97316;
+  --color-secondary-light: #FDBA74;
 
   /* Fonts */
   --font-sans: var(--font-inter);
@@ -88,11 +88,11 @@ html {
 
 /* Glow effects */
 .glow-primary {
-  box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
+  box-shadow: 0 0 20px rgba(225, 29, 72, 0.3);
 }
 
 .glow-secondary {
-  box-shadow: 0 0 20px rgba(20, 184, 166, 0.3);
+  box-shadow: 0 0 20px rgba(249, 115, 22, 0.3);
 }
 
 /* Three.js canvas */

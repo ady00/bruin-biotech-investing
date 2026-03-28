@@ -38,7 +38,7 @@ function DNAStrand() {
         bp.push({
           start: new THREE.Vector3(x1, y, z1),
           end: new THREE.Vector3(x2, y, z2),
-          color: i % 4 === 0 ? '#F59E0B' : '#EF4444',
+          color: i % 4 === 0 ? '#FB7185' : '#FDBA74',
         });
       }
     }
@@ -65,24 +65,24 @@ function DNAStrand() {
 
   return (
     <group ref={groupRef}>
-      {/* Strand 1 - Purple */}
+      {/* Strand 1 - Rose/Red */}
       <mesh>
         <tubeGeometry args={[strand1Curve, 100, 0.07, 8, false]} />
         <meshStandardMaterial
-          color="#7C3AED"
-          emissive="#7C3AED"
+          color="#E11D48"
+          emissive="#E11D48"
           emissiveIntensity={0.3}
           roughness={0.3}
           metalness={0.7}
         />
       </mesh>
 
-      {/* Strand 2 - Teal */}
+      {/* Strand 2 - Orange */}
       <mesh>
         <tubeGeometry args={[strand2Curve, 100, 0.07, 8, false]} />
         <meshStandardMaterial
-          color="#14B8A6"
-          emissive="#14B8A6"
+          color="#F97316"
+          emissive="#F97316"
           emissiveIntensity={0.3}
           roughness={0.3}
           metalness={0.7}
@@ -128,8 +128,8 @@ function Scene() {
     <>
       {/* Lighting */}
       <ambientLight intensity={0.4} />
-      <pointLight position={[10, 10, 10]} intensity={1} color="#7C3AED" />
-      <pointLight position={[-10, -10, -10]} intensity={0.5} color="#14B8A6" />
+      <pointLight position={[10, 10, 10]} intensity={1} color="#E11D48" />
+      <pointLight position={[-10, -10, -10]} intensity={0.5} color="#F97316" />
       <spotLight
         position={[0, 10, 0]}
         angle={0.3}
