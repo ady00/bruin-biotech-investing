@@ -38,13 +38,17 @@ export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* DNA Helix - Full height with fade overlay */}
-      <div className="absolute right-0 top-20 bottom-0 w-1/2 lg:w-2/5">
+      <div className="absolute right-0 top-20 bottom-0 w-full md:w-1/2 lg:w-2/5">
         {/* Top fade */}
         <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[var(--background)] to-transparent z-10 pointer-events-none" />
         {/* Bottom fade */}
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[var(--background)] to-transparent z-10 pointer-events-none" />
-        {/* Left fade for smoother blend */}
-        <div className="absolute top-0 bottom-0 left-0 w-24 bg-gradient-to-r from-[var(--background)] to-transparent z-10 pointer-events-none" />
+        {/* Left fade - wider on mobile for smooth blend with content */}
+        <div className="absolute top-0 bottom-0 left-0 w-1/2 md:w-32 bg-gradient-to-r from-[var(--background)] via-[var(--background)]/80 to-transparent z-10 pointer-events-none" />
+        {/* Right fade on mobile */}
+        <div className="absolute top-0 bottom-0 right-0 w-16 md:w-0 bg-gradient-to-l from-[var(--background)] to-transparent z-10 pointer-events-none" />
+        {/* Mobile overlay to reduce intensity */}
+        <div className="absolute inset-0 bg-[var(--background)]/30 md:bg-transparent z-[5] pointer-events-none" />
         <DNAHelix />
       </div>
 

@@ -1,4 +1,4 @@
-# GUIDE TO EDITING CONTENT.
+# GUIDE TO EDITING CONTENT. 
 
 
 ## read this first
@@ -10,6 +10,10 @@ All the (important) content in this website is stored in Markdown files (
 ). Markdown files are glorified text files that can be parsed easily; do not 
 be scared by them. there is no crazy syntax to memorize, just follow the rules
 I have written.
+
+Try to chain major code/content changes together – if you make TOO MANY content changes the provider will rate limit the website. Instead of updating
+each individual on the home page once, upload them all in at once and push your
+changes then.
 
 To navigate to a particular directory, press on the folders in that order. 
 For instance, to navigate to the team members, first press on the content 
