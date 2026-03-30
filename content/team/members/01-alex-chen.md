@@ -1,7 +1,7 @@
 ---
-name: Paul Atreides
-position: President
-year: "2026"
-image: /team/placeholder.svg
+name: Sumer
+position: Board Member
+year: "2028"
+image: /team/IMG_2064 - Sumer Pannu.jpeg
 order: 1
 ---
