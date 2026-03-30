@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Mail } from 'lucide-react';
 
 // Custom SVG icons for social media
@@ -24,8 +25,7 @@ interface FooterLink {
 
 const footerLinks: { main: FooterLink[]; club: FooterLink[] } = {
   main: [
-    { href: '/our-work', label: 'Our Work' },
-    { href: 'https://substack.com', label: 'Newsletter', external: true },
+    { href: 'https://thebiobrief.substack.com/', label: 'Newsletter', external: true },
   ],
   club: [
     { href: '/team', label: 'Our Team' },
@@ -34,8 +34,8 @@ const footerLinks: { main: FooterLink[]; club: FooterLink[] } = {
 };
 
 const socialLinks = [
-  { href: 'https://linkedin.com', icon: LinkedInIcon, label: 'LinkedIn' },
-  { href: 'https://instagram.com', icon: InstagramIcon, label: 'Instagram' },
+  { href: 'https://www.linkedin.com/company/bruinbiotechinvesting/', icon: LinkedInIcon, label: 'LinkedIn' },
+  { href: 'https://www.instagram.com/bruinbiotechinvesting', icon: InstagramIcon, label: 'Instagram' },
   { href: 'mailto:sumer2028@g.ucla.edu', icon: Mail, label: 'Email' },
 ];
 
@@ -70,8 +70,14 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-secondary)] flex items-center justify-center">
-                <span className="text-white font-bold text-sm">BB</span>
+              <div className="w-8 h-8 rounded-lg overflow-hidden">
+                <Image
+                  src="/BBI_logo.jpg"
+                  alt="BBI Logo"
+                  width={32}
+                  height={32}
+                  className="object-cover"
+                />
               </div>
               <span className="font-heading font-bold text-lg">
                 Bruin Biotech Investing
@@ -125,7 +131,8 @@ export function Footer() {
         {/* Bottom */}
         <div className="mt-12 pt-8 border-t border-[var(--border)] flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-[var(--muted)] text-sm">
-            &copy; {new Date().getFullYear()} Bruin Biotech Investing. Built by <a href="https://www.linkedin.com/in/advay-bajpai/" target="_blank" rel="noopener noreferrer" className='underline'>Advay Bajpai</a>.
+            &copy; {new Date().getFullYear()} Bruin Biotech Investing.
+            {/* Built by <a href="https://www.linkedin.com/in/advay-bajpai/" target="_blank" rel="noopener noreferrer" className='underline'>Advay Bajpai</a>. */}
           </p>
           <p className="text-[var(--muted)] text-sm">
             A student organization at UCLA

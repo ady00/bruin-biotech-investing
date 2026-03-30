@@ -20,6 +20,9 @@ const itemVariants: Variants = {
 };
 
 function MemberCard({ member }: { member: TeamMember }) {
+  // Use top positioning for Sumer Pannu's photo
+  const imagePosition = member.name === 'Sumer Pannu' ? 'object-top' : 'object-center';
+
   return (
     <motion.div variants={itemVariants} className="group text-center">
       <div className="relative mb-4 w-32 h-32 mx-auto">
@@ -30,7 +33,7 @@ function MemberCard({ member }: { member: TeamMember }) {
               src={member.image}
               alt={member.name}
               fill
-              className="object-cover"
+              className={`object-cover ${imagePosition}`}
             />
           </div>
         </div>
@@ -40,7 +43,6 @@ function MemberCard({ member }: { member: TeamMember }) {
       <p className="text-[var(--color-primary)] text-sm font-medium">
         {member.position}
       </p>
-      <p className="text-[var(--muted)] text-sm">Class of {member.year}</p>
     </motion.div>
   );
 }

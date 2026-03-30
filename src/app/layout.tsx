@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Marcellus, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
-const inter = Inter({
-  variable: "--font-inter",
+const sourceSans = Source_Sans_3({
+  variable: "--font-source-sans",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const marcellus = Marcellus({
+  variable: "--font-marcellus",
   subsets: ["latin"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -29,6 +31,10 @@ export const metadata: Metadata = {
     "healthcare",
   ],
   authors: [{ name: "Bruin Biotech Investing" }],
+  icons: {
+    icon: "/BBI_logo.jpg",
+    apple: "/BBI_logo.jpg",
+  },
   openGraph: {
     title: "Bruin Biotech Investing | UCLA",
     description:
@@ -45,7 +51,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${spaceGrotesk.variable}`}
+      className={`${sourceSans.variable} ${marcellus.variable}`}
       suppressHydrationWarning
     >
       <body className="min-h-screen flex flex-col antialiased">

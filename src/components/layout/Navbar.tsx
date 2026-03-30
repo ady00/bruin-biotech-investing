@@ -1,13 +1,12 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useTheme } from 'next-themes';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Sun, Moon, Monitor } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const navLinks = [
-  { href: '/our-work', label: 'Our Work' },
   { href: 'https://substack.com', label: 'Newsletter', external: true },
   { href: '/team', label: 'Our Team' },
   { href: '/recruitment', label: 'Recruitment' },
@@ -16,30 +15,14 @@ const navLinks = [
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
-    setMounted(true);
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const cycleTheme = () => {
-    if (theme === 'light') setTheme('dark');
-    else if (theme === 'dark') setTheme('system');
-    else setTheme('light');
-  };
-
-  const ThemeIcon = () => {
-    if (!mounted) return <Monitor className="w-5 h-5" />;
-    if (theme === 'light') return <Sun className="w-5 h-5" />;
-    if (theme === 'dark') return <Moon className="w-5 h-5" />;
-    return <Monitor className="w-5 h-5" />;
-  };
 
   return (
     <>
@@ -57,8 +40,14 @@ export function Navbar() {
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-secondary)] flex items-center justify-center">
-                <span className="text-white font-bold text-sm">BB</span>
+              <div className="w-8 h-8 rounded-lg overflow-hidden">
+                <Image
+                  src="/BBI_logo.jpg"
+                  alt="BBI Logo"
+                  width={32}
+                  height={32}
+                  className="object-cover"
+                />
               </div>
               <span className="font-heading font-bold text-lg hidden sm:block">
                 Bruin Biotech
@@ -90,30 +79,18 @@ export function Navbar() {
               )}
             </div>
 
-            {/* Right side: Theme toggle + Mobile menu */}
-            <div className="flex items-center gap-2">
-              {/* Theme toggle */}
-              <button
-                onClick={cycleTheme}
-                className="p-2 rounded-lg text-[var(--muted)] hover:text-[var(--foreground)] hover:bg-[var(--surface-hover)] transition-colors"
-                aria-label="Toggle theme"
-              >
-                <ThemeIcon />
-              </button>
-
-              {/* Mobile menu button */}
-              <button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="md:hidden p-2 rounded-lg text-[var(--muted)] hover:text-[var(--foreground)] hover:bg-[var(--surface-hover)] transition-colors"
-                aria-label="Toggle menu"
-              >
-                {isMobileMenuOpen ? (
-                  <X className="w-5 h-5" />
-                ) : (
-                  <Menu className="w-5 h-5" />
-                )}
-              </button>
-            </div>
+            {/* Mobile menu button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden p-2 rounded-lg text-[var(--muted)] hover:text-[var(--foreground)] hover:bg-[var(--surface-hover)] transition-colors"
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? (
+                <X className="w-5 h-5" />
+              ) : (
+                <Menu className="w-5 h-5" />
+              )}
+            </button>
           </div>
         </div>
       </motion.nav>

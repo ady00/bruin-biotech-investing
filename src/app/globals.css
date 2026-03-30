@@ -9,8 +9,8 @@
   --color-secondary-light: #FDBA74;
 
   /* Fonts */
-  --font-sans: var(--font-inter);
-  --font-heading: var(--font-space-grotesk);
+  --font-sans: var(--font-source-sans);
+  --font-heading: var(--font-marcellus);
 
   /* Responsive */
   --breakpoint-xs: 475px;

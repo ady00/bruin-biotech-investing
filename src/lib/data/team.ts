@@ -6,7 +6,7 @@ export interface TeamMember {
   id: string;
   name: string;
   position: string;
-  year: string;
+  year?: string;
   image: string;
   order: number;
 }
@@ -41,7 +41,7 @@ export function getBoardMembers(): TeamMember[] {
         id: String(index + 1),
         name: data.name || '',
         position: data.position || '',
-        year: String(data.year) || '',
+        year: data.year ? String(data.year) : undefined,
         image: data.image || '/team/placeholder.svg',
         order: data.order || index + 1,
       };

@@ -1,9 +1,9 @@
 ---
-name: Info Session
+name: Resumé Drop
 date: TBA
 time: TBA
 location: TBA
 order: 1
 ---
 
-Learn about Bruin Biotech Investing, our mission, and what we look for in candidates. Open to all interested students.
+Fill out our interest form to begin the process of joining Bruin Biotech!

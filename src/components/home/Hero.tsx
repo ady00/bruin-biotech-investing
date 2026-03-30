@@ -91,12 +91,7 @@ export function Hero() {
                 Join Us
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link
-                href="/our-work"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-full border border-[var(--border)] text-[var(--foreground)] font-semibold text-lg hover:bg-[var(--surface-hover)] transition-colors"
-              >
-                Learn More
-              </Link>
+
             </motion.div>
           </motion.div>
         </div>
