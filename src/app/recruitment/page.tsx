@@ -14,7 +14,6 @@ export default function RecruitmentPage() {
     <main className="pt-24 pb-16">
       <HeroSection config={config} />
       <TimelineSection events={events} />
-      <WhatToExpectSection />
       <FAQSection faqs={faqs} />
       <ContactSection />
     </main>

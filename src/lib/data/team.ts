@@ -8,6 +8,7 @@ export interface TeamMember {
   position: string;
   year?: string;
   image: string;
+  linkedin?: string;
   order: number;
 }
 
@@ -43,6 +44,7 @@ export function getBoardMembers(): TeamMember[] {
         position: data.position || '',
         year: data.year ? String(data.year) : undefined,
         image: data.image || '/team/placeholder.svg',
+        linkedin: data.linkedin || undefined,
         order: data.order || index + 1,
       };
     });

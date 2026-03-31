@@ -19,7 +19,7 @@ export function ContactSection() {
             Reach out to us and we&apos;ll get back to you as soon as possible.
           </p>
           <a
-            href="mailto:sumer2028@g.ucla.edu"
+            href="mailto:bruinbiotechinvesting@gmail.com"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[var(--border)] text-[var(--foreground)] font-medium hover:bg-[var(--surface-hover)] transition-colors"
           >
             Contact Us
