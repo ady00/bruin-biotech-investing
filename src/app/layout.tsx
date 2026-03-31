@@ -30,7 +30,8 @@ export const metadata: Metadata = {
     "investment banking",
     "healthcare",
   ],
-  authors: [{ name: "Bruin Biotech Investing" }],
+  authors: [{ name: "Bruin Biotech Investing" }, { name: "Advay Bajpai" }],
+  creator: "Advay Bajpai",
   icons: {
     icon: "/BBI_logo.jpg",
     apple: "/BBI_logo.jpg",

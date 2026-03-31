@@ -1,9 +1,9 @@
 ---
-name: Resumé Drop
-date: TBA
-time: TBA
-location: TBA
+name: Applications
+date: 4/4
+time: 11:59PM
+location: N/A
 order: 1
 ---
 
-Fill out our interest form to begin the process of joining Bruin Biotech!
+Applicants must submit their resumé along with a few essay questions.

@@ -75,8 +75,7 @@ export function Hero() {
               variants={itemVariants}
               className="text-xl sm:text-2xl text-(--muted) max-w-xl mb-10"
             >
-              Bridging science and capital. Training students for careers in
-              IB and public markets investing within the life sciences.
+              UCLA's premier healthcare investment organization.
             </motion.p>
 
             {/* CTA Buttons */}

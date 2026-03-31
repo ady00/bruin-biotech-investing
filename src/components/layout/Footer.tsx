@@ -23,9 +23,10 @@ interface FooterLink {
   external?: boolean;
 }
 
-const footerLinks: { main: FooterLink[]; club: FooterLink[] } = {
-  main: [
-    { href: 'https://thebiobrief.substack.com/', label: 'Newsletter', external: true },
+const footerLinks: { ourWork: FooterLink[]; club: FooterLink[] } = {
+  ourWork: [
+    { href: '/our-work#newsletter', label: 'Newsletter' },
+    { href: '/our-work#portfolio', label: 'Investment Portfolio' },
   ],
   club: [
     { href: '/team', label: 'Our Team' },
@@ -36,7 +37,7 @@ const footerLinks: { main: FooterLink[]; club: FooterLink[] } = {
 const socialLinks = [
   { href: 'https://www.linkedin.com/company/bruinbiotechinvesting/', icon: LinkedInIcon, label: 'LinkedIn' },
   { href: 'https://www.instagram.com/bruinbiotechinvesting', icon: InstagramIcon, label: 'Instagram' },
-  { href: 'mailto:sumer2028@g.ucla.edu', icon: Mail, label: 'Email' },
+  { href: 'mailto:bruinbiotechinvesting@gmail.com', icon: Mail, label: 'Email' },
 ];
 
 export function Footer() {
@@ -107,10 +108,10 @@ export function Footer() {
           {/* Links */}
           <div>
             <h3 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4">
-              Resources
+              Our Work
             </h3>
             <ul className="space-y-2">
-              {footerLinks.main.map((link) => (
+              {footerLinks.ourWork.map((link) => (
                 <li key={link.href}>{renderLink(link)}</li>
               ))}
             </ul>

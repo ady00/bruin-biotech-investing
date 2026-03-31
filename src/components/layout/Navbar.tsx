@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { useTheme } from 'next-themes';
 
 const navLinks = [
-  { href: 'https://thebiobrief.substack.com/', label: 'Newsletter', external: true },
+  { href: '/our-work', label: 'Our Work' },
   { href: '/team', label: 'Our Team' },
   { href: '/recruitment', label: 'Recruitment' },
 ];
@@ -57,7 +57,7 @@ export function Navbar() {
                 />
               </div>
               <span className="font-heading font-bold text-lg hidden sm:block">
-                Bruin Biotech
+                Bruin Biotech Investing
               </span>
             </Link>
 

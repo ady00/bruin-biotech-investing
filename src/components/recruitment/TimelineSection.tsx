@@ -79,10 +79,12 @@ export function TimelineSection({ events }: { events: RecruitmentEvent[] }) {
                         <Clock className="w-4 h-4" />
                         <span>{event.time}</span>
                       </div>
-                      <div className="flex items-center gap-2">
-                        <MapPin className="w-4 h-4" />
-                        <span>{event.location}</span>
-                      </div>
+                      {event.location && event.location !== 'N/A' && event.location !== 'TBA' && (
+                        <div className="flex items-center gap-2">
+                          <MapPin className="w-4 h-4" />
+                          <span>{event.location}</span>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </motion.div>

@@ -1,6 +1,6 @@
 ---
 status: open
 quarter: Spring
-year: "2025"
+year: "2026"
 applicationUrl: https://forms.google.com
 ---

@@ -17,7 +17,7 @@ export function HeroSection({ config }: { config: RecruitmentConfig }) {
           className="text-center max-w-3xl mx-auto"
         >
           <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-            Join <span className="gradient-text">Bruin Biotech</span>
+            Join <span className="gradient-text">Bruin Biotech Investing</span>
           </h1>
           <p className="text-xl text-[var(--muted)] mb-8">
             We carefully select students who are passionate about biotech and eager to learn about healthcare investing.
