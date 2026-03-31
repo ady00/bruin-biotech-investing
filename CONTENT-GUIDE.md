@@ -159,11 +159,9 @@ year: "2028"
 placements:
   - name: Student Name
     company: Company Name
-    role: Job Title
     type: Internship
   - name: Another Student
     company: Another Company
-    role: Another Role
     type: Full-time
 ---
 ```
@@ -173,7 +171,6 @@ placements:
 - `placements`: A list of placement entries
   - `name`: Student's name
   - `company`: Company name (e.g., "Goldman Sachs")
-  - `role`: Job title (e.g., "Healthcare IB Summer Analyst")
   - `type`: Either `Internship` or `Full-time`
 
 ### To Add a Placement to an Existing Year
@@ -196,7 +193,7 @@ Edit `content/recruitment/config.md`:
 ---
 status: open
 quarter: Fall
-year: "2025"
+year: "2026"
 applicationUrl: https://forms.google.com/your-form-link
 ---
 ```

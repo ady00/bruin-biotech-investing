@@ -16,7 +16,6 @@ export interface Placement {
   id: string;
   name: string;
   company: string;
-  role: string;
   type: 'Internship' | 'Full-time';
   year: string;
 }
@@ -71,11 +70,10 @@ export function getPlacements(): Record<string, Placement[]> {
 
       const year = String(data.year);
       const placements = (data.placements || []).map(
-        (p: { name: string; company: string; role: string; type: string }, index: number) => ({
+        (p: { name: string; company: string; type: string }, index: number) => ({
           id: String(index + 1),
           name: p.name || '',
           company: p.company || '',
-          role: p.role || '',
           type: (p.type as 'Internship' | 'Full-time') || 'Internship',
           year,
         })

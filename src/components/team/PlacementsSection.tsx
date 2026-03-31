@@ -13,7 +13,7 @@ export function PlacementsSection({
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
-  const availableYears = Object.keys(placements).sort().reverse();
+  const availableYears = Object.keys(placements).sort();
   const [selectedYear, setSelectedYear] = useState(availableYears[0] || '2026');
 
   return (
@@ -57,10 +57,9 @@ export function PlacementsSection({
           <div className="max-w-4xl mx-auto">
             <div className="bg-[var(--surface)] rounded-2xl border border-[var(--border)] overflow-hidden">
               {/* Table Header */}
-              <div className="grid grid-cols-4 gap-4 px-6 py-4 bg-[var(--background)] border-b border-[var(--border)] text-sm font-medium text-[var(--muted)]">
+              <div className="grid grid-cols-3 gap-4 px-6 py-4 bg-[var(--background)] border-b border-[var(--border)] text-sm font-medium text-[var(--muted)]">
                 <div>Name</div>
                 <div>Company</div>
-                <div>Role</div>
                 <div>Type</div>
               </div>
 
@@ -72,11 +71,10 @@ export function PlacementsSection({
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.3 }}
-                    className="grid grid-cols-4 gap-4 px-6 py-4 text-sm hover:bg-[var(--background)] transition-colors"
+                    className="grid grid-cols-3 gap-4 px-6 py-4 text-sm hover:bg-[var(--background)] transition-colors"
                   >
                     <div className="font-medium">{placement.name}</div>
                     <div className="text-[var(--muted)]">{placement.company}</div>
-                    <div className="text-[var(--muted)]">{placement.role}</div>
                     <div>
                       <span
                         className={`inline-flex px-2 py-0.5 rounded-full text-xs font-medium ${
