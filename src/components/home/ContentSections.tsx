@@ -135,7 +135,11 @@ export function WhyWeExist() {
   );
 }
 
-export function WhoWereLookingFor() {
+interface WhoWereLookingForProps {
+  isRecruitingOpen?: boolean;
+}
+
+export function WhoWereLookingFor({ isRecruitingOpen = true }: WhoWereLookingForProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
@@ -163,13 +167,19 @@ export function WhoWereLookingFor() {
 
           {/* CTA */}
           <motion.div variants={itemVariants}>
-            <Link
-              href="/recruitment"
-              className="group inline-flex items-center justify-center px-8 py-4 rounded-full bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] text-white font-semibold text-lg transition-all hover:opacity-90 hover:scale-105 shadow-lg shadow-[var(--color-primary)]/20"
-            >
-              Apply Now
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
+            {isRecruitingOpen ? (
+              <Link
+                href="/recruitment"
+                className="group inline-flex items-center justify-center px-8 py-4 rounded-full bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] text-white font-semibold text-lg transition-all hover:opacity-90 hover:scale-105 shadow-lg shadow-[var(--color-primary)]/20"
+              >
+                Apply Now
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            ) : (
+              <span className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-gray-400 text-white font-semibold text-lg cursor-not-allowed">
+                Closed
+              </span>
+            )}
           </motion.div>
         </motion.div>
       </div>

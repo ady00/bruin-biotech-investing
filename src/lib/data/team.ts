@@ -22,18 +22,16 @@ export interface Placement {
 
 const teamDirectory = path.join(process.cwd(), 'content/team');
 
-export function getBoardMembers(): TeamMember[] {
-  const membersDirectory = path.join(teamDirectory, 'members');
-
-  if (!fs.existsSync(membersDirectory)) {
+function loadTeamMembers(directory: string): TeamMember[] {
+  if (!fs.existsSync(directory)) {
     return [];
   }
 
-  const fileNames = fs.readdirSync(membersDirectory);
+  const fileNames = fs.readdirSync(directory);
   const members = fileNames
     .filter((fileName) => fileName.endsWith('.md'))
     .map((fileName, index) => {
-      const fullPath = path.join(membersDirectory, fileName);
+      const fullPath = path.join(directory, fileName);
       const fileContents = fs.readFileSync(fullPath, 'utf8');
       const { data } = matter(fileContents);
 
@@ -49,6 +47,16 @@ export function getBoardMembers(): TeamMember[] {
     });
 
   return members.sort((a, b) => a.order - b.order);
+}
+
+export function getBoardMembers(): TeamMember[] {
+  const membersDirectory = path.join(teamDirectory, 'members');
+  return loadTeamMembers(membersDirectory);
+}
+
+export function getAnalysts(): TeamMember[] {
+  const analystsDirectory = path.join(teamDirectory, 'analysts');
+  return loadTeamMembers(analystsDirectory);
 }
 
 export function getPlacements(): Record<string, Placement[]> {

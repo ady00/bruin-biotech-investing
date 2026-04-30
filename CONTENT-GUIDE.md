@@ -29,7 +29,8 @@ contact Advay at [advayb2018 at gmail dot com].
 ## Table of Contents
 - [Getting Started with GitHub](#getting-started-with-github)
 - [Editing Stock Pitches](#editing-stock-pitches)
-- [Editing Team Members](#editing-team-members)
+- [Editing Team Members (Executive Board)](#editing-team-members)
+- [Editing Analysts](#editing-analysts)
 - [Editing Placements](#editing-placements)
 - [Editing Recruitment Information](#editing-recruitment-information)
 - [Adding Images](#adding-images)
@@ -142,6 +143,49 @@ order: 16
 
 ---
 
+## Editing Analysts
+
+Analysts are stored in: `content/team/analysts/`
+
+Analysts are displayed in a separate section below the Executive Board on the Team page.
+
+### To Add a New Analyst
+
+1. Go to `content/team/analysts/`
+2. Click **"Add file"** > **"Create new file"**
+3. Name your file: `XX-firstname-lastname.md` (e.g., `15-jane-doe.md`)
+   - The number at the start controls the display order
+4. Copy this template:
+
+```markdown
+---
+name: First Last
+position: Analyst
+image: /team/placeholder.svg
+order: 15
+---
+```
+
+**Field explanations:**
+- `name`: Full name
+- `position`: Their role (typically "Analyst")
+- `image`: Path to headshot image (use `/team/placeholder.svg` if no image yet)
+- `order`: Number controlling display order (1 = first, higher = later)
+
+### To Edit an Analyst
+
+1. Go to `content/team/analysts/`
+2. Click on their file
+3. Click the pencil icon and make changes
+
+### To Remove an Analyst
+
+1. Go to `content/team/analysts/`
+2. Click on their file
+3. Click the trash icon and commit
+
+---
+
 ## Editing Placements
 
 Placements are organized by year in: `content/team/placements/`
@@ -200,6 +244,8 @@ applicationUrl: https://forms.google.com/your-form-link
 
 **To open applications:** Change `status: closed` to `status: open`
 **To close applications:** Change `status: open` to `status: closed`
+
+**Note:** When `status` is set to `open`, the "Apply Now" button will appear on both the home page and recruitment page. When set to `closed`, a greyed out "Closed" button will be displayed instead.
 
 ### Editing Timeline Events
 
@@ -283,7 +329,8 @@ If you run into issues, reach out to the Advay at the email above.
 | Content Type | Location |
 |-------------|----------|
 | Stock Pitches | `content/pitches/` |
-| Team Members | `content/team/members/` |
+| Team Members (Exec Board) | `content/team/members/` |
+| Analysts | `content/team/analysts/` |
 | Placements | `content/team/placements/` |
 | Recruitment Config | `content/recruitment/config.md` |
 | Timeline Events | `content/recruitment/events/` |

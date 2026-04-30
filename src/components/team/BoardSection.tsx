@@ -27,13 +27,13 @@ function MemberCard({ member }: { member: TeamMember }) {
     <motion.div variants={itemVariants} className="group text-center">
       <div className="relative mb-4 w-32 h-32 mx-auto">
         {/* Image with gradient border on hover */}
-        <div className="relative w-32 h-32 rounded-full p-[3px] bg-transparent group-hover:bg-gradient-to-br group-hover:from-[var(--color-primary)] group-hover:to-[var(--color-secondary)] transition-all">
-          <div className="w-full h-full rounded-full overflow-hidden bg-[var(--surface)] border-2 border-[var(--border)] group-hover:border-transparent transition-colors">
+        <div className="relative w-32 h-32 rounded-2xl p-[3px] bg-transparent group-hover:bg-gradient-to-br group-hover:from-[var(--color-primary)] group-hover:to-[var(--color-secondary)] transition-all">
+          <div className="w-full h-full rounded-xl overflow-hidden bg-[var(--surface)] border-2 border-[var(--border)] group-hover:border-transparent transition-colors">
             <Image
               src={member.image}
               alt={member.name}
               fill
-              className={`object-cover ${imagePosition}`}
+              className={`object-cover ${imagePosition} grayscale`}
             />
           </div>
         </div>

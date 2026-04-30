@@ -42,8 +42,8 @@ export function HeroSection({ config }: { config: RecruitmentConfig }) {
             </span>
           </div>
 
-          {isOpen && (
-            <div className="mt-6">
+          <div className="mt-6">
+            {isOpen ? (
               <a
                 href={config.applicationUrl}
                 target="_blank"
@@ -53,8 +53,12 @@ export function HeroSection({ config }: { config: RecruitmentConfig }) {
                 Apply Now
                 <ExternalLink className="w-5 h-5" />
               </a>
-            </div>
-          )}
+            ) : (
+              <span className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gray-400 text-white font-semibold text-lg cursor-not-allowed">
+                Closed
+              </span>
+            )}
+          </div>
         </motion.div>
       </div>
     </section>
