@@ -6,10 +6,8 @@
 This guide explains how to update the website content without any coding knowledge. 
 
 All the (important) content in this website is stored in Markdown files (
-  essentially, a simpler version of a MS Word or Google Doc file
-). Markdown files are glorified text files that can be parsed easily; do not 
-be scared by them. there is no crazy syntax to memorize, just follow the rules
-I have written.
+  essentially, a simpler version of a MS Word or Google Doc file). There's no syntax knowledge needed, BUT 
+  follow the rules I have written for changes to reflect appropriately.
 
 Try to chain major code/content changes together – if you make TOO MANY content changes the provider will rate limit the website. Instead of updating
 each individual on the home page once, upload them all in at once and push your
@@ -22,7 +20,7 @@ list of markdown files of teammates.
 
 I have set up the site and its deployment to redeploy (redeployments take 3-4 mins) each time a change in content is detected (deleting an alumni, adding a 
 new class, updating a stock pitch, etc). Thus, the only thing you have to worry
-about is making those requisite edits (which I go into more detail below) – DO 
+about is making the aforementioned edits (which I go into more detail below) – DO 
 NOT touch any other files. If the site fails to update or breaks entirely,
 contact Advay at [advayb2018 at gmail dot com].
 
