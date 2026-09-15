@@ -1,6 +1,6 @@
 ---
 name: Max Matthews
-position: Analyst
+position: Director of Finance
 image: /team/Matthews Head Shot - CHARLES MATTHEWS.png
-order: 1
+order: 3
 ---

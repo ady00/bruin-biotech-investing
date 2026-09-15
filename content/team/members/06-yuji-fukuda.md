@@ -1,7 +1,7 @@
 ---
 name: Yuji Fukuda
-position: Board Member
+position: Advisor
 image: /team/Yuji_Fukuda_Headshot - Yuji Fukuda.jpg
 linkedin: https://www.linkedin.com/in/yfukuda27/
-order: 15
+order: 6
 ---

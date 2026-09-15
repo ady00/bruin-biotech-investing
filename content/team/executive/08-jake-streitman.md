@@ -1,6 +1,6 @@
 ---
 name: Jake Streitman
-position: Analyst
+position: Portfolio Manager
 image: /team/IMG_3265 - JAKE STREITMAN.jpeg
-order: 10
+order: 8
 ---

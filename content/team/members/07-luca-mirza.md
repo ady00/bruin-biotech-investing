@@ -1,6 +1,6 @@
 ---
 name: Luca Mirza
-position: Analyst
+position: Associate
 image: /team/DSC08064 - Luca Mirza.jpeg
-order: 2
+order: 7
 ---

@@ -1,6 +1,6 @@
 ---
 name: Vivienne Chador
-position: Analyst
+position: Associate
 image: /team/Vivienne Headshot - Vivienne Chador.png
-order: 14
+order: 13
 ---

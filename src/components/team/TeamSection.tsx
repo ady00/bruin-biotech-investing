@@ -19,9 +19,13 @@ const itemVariants: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
 };
 
+// Use top positioning for these photos
+const TOP_POSITIONED = ['Sumer Pannu', 'Andrew Spencer'];
+
 function MemberCard({ member }: { member: TeamMember }) {
-  // Use top positioning for Sumer Pannu's photo
-  const imagePosition = member.name === 'Sumer Pannu' ? 'object-top' : 'object-center';
+  const imagePosition = TOP_POSITIONED.includes(member.name)
+    ? 'object-top'
+    : 'object-center';
 
   return (
     <motion.div variants={itemVariants} className="group text-center">
@@ -65,12 +69,28 @@ function MemberCard({ member }: { member: TeamMember }) {
   );
 }
 
-export function BoardSection({ members }: { members: TeamMember[] }) {
+export function TeamSection({
+  title,
+  description,
+  members,
+  surface = false,
+}: {
+  title: string;
+  description: string;
+  members: TeamMember[];
+  surface?: boolean;
+}) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
+  // ponytail: empty sections (e.g. Executive Board before content exists) render nothing
+  if (members.length === 0) return null;
+
   return (
-    <section className="py-16 bg-[var(--surface)]" ref={ref}>
+    <section
+      className={`py-16 ${surface ? 'bg-[var(--surface)]' : 'bg-[var(--background)]'}`}
+      ref={ref}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={containerVariants}
@@ -79,11 +99,10 @@ export function BoardSection({ members }: { members: TeamMember[] }) {
         >
           <motion.div variants={itemVariants} className="text-center mb-12">
             <h2 className="font-heading text-3xl sm:text-4xl font-bold mb-4">
-              Executive Board
+              {title}
             </h2>
             <p className="text-[var(--muted)] max-w-2xl mx-auto">
-              Our leadership team guides the club&apos;s direction and ensures
-              members have the best experience.
+              {description}
             </p>
           </motion.div>
 

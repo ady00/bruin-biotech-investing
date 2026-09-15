@@ -1,6 +1,6 @@
 ---
 name: Andrew Spencer
-position: Analyst
+position: Associate
 image: /team/IMG_6284 - Andrew Spencer.jpeg
-order: 3
+order: 8
 ---

@@ -1,7 +1,7 @@
 ---
 name: Young Liu
-position: Board Member
+position: Advisor
 image: /team/Young_Liu_Headshot - Young Liu.jpg
 linkedin: https://www.linkedin.com/in/young-y-liu/
-order: 14
+order: 5
 ---

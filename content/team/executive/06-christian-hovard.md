@@ -1,6 +1,6 @@
 ---
 name: Christian Hovard
-position: Analyst
+position: Director of Recruitment
 image: /team/Headshot_VF - Christian Hovard.jpg
-order: 9
+order: 6
 ---

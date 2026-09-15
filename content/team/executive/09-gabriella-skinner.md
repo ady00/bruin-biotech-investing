@@ -1,6 +1,6 @@
 ---
 name: Gabriella Skinner
-position: Analyst
+position: Newsletter Manager
 image: /team/IMG_8667 - Gabby Skinner.jpeg
-order: 12
+order: 9
 ---

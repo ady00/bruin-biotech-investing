@@ -1,6 +1,6 @@
 ---
 name: Aiden Delehanty
-position: Analyst
+position: Associate
 image: /team/IMG_1340 - aiden.jpeg
-order: 7
+order: 11
 ---

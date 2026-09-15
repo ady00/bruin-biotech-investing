@@ -1,6 +1,6 @@
 ---
 name: Julia Vela
-position: Analyst
+position: Associate
 image: /team/Actual Headshot - JULIA VELA.jpeg
-order: 5
+order: 10
 ---

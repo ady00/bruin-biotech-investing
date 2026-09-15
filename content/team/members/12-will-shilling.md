@@ -1,6 +1,6 @@
 ---
 name: Will Shilling
-position: Analyst
+position: Associate
 image: /team/Will Shilling Headshot (2) - Will Shilling.jpeg
-order: 11
+order: 12
 ---

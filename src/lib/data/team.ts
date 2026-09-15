@@ -49,14 +49,19 @@ function loadTeamMembers(directory: string): TeamMember[] {
   return members.sort((a, b) => a.order - b.order);
 }
 
-export function getBoardMembers(): TeamMember[] {
-  const membersDirectory = path.join(teamDirectory, 'members');
-  return loadTeamMembers(membersDirectory);
+export function getExecutiveBoard(): TeamMember[] {
+  const executiveDirectory = path.join(teamDirectory, 'executive');
+  return loadTeamMembers(executiveDirectory);
 }
 
-export function getAnalysts(): TeamMember[] {
-  const analystsDirectory = path.join(teamDirectory, 'analysts');
-  return loadTeamMembers(analystsDirectory);
+export function getBoardMembers(): TeamMember[] {
+  const boardDirectory = path.join(teamDirectory, 'board');
+  return loadTeamMembers(boardDirectory);
+}
+
+export function getMembers(): TeamMember[] {
+  const membersDirectory = path.join(teamDirectory, 'members');
+  return loadTeamMembers(membersDirectory);
 }
 
 export function getPlacements(): Record<string, Placement[]> {

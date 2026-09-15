@@ -1,7 +1,7 @@
 ---
 name: Sumer Pannu
-position: Board Member
+position: Vice President
 image: /team/IMG_2064 - Sumer Pannu.jpeg
 linkedin: https://www.linkedin.com/in/sumer-pannu/
-order: 6
+order: 2
 ---
