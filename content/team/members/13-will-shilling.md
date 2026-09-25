@@ -2,5 +2,6 @@
 name: Will Shilling
 position: Associate
 image: /team/Will Shilling Headshot (2) - Will Shilling.jpeg
-order: 12
+linkedin: https://www.linkedin.com/in/william-shilling-8423a8305/
+order: 13
 ---

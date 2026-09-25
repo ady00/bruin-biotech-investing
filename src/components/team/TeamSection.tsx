@@ -71,12 +71,10 @@ function MemberCard({ member }: { member: TeamMember }) {
 
 export function TeamSection({
   title,
-  description,
   members,
   surface = false,
 }: {
   title: string;
-  description: string;
   members: TeamMember[];
   surface?: boolean;
 }) {
@@ -98,12 +96,9 @@ export function TeamSection({
           animate={isInView ? 'visible' : 'hidden'}
         >
           <motion.div variants={itemVariants} className="text-center mb-12">
-            <h2 className="font-heading text-3xl sm:text-4xl font-bold mb-4">
+            <h2 className="font-heading text-3xl sm:text-4xl font-bold">
               {title}
             </h2>
-            <p className="text-[var(--muted)] max-w-2xl mx-auto">
-              {description}
-            </p>
           </motion.div>
 
           {/* Members Grid */}

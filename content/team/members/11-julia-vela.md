@@ -2,5 +2,6 @@
 name: Julia Vela
 position: Associate
 image: /team/Actual Headshot - JULIA VELA.jpeg
-order: 10
+linkedin: https://www.linkedin.com/in/julia-vela8/
+order: 11
 ---
