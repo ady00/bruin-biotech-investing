@@ -7,6 +7,7 @@ const sections = [
     id: 'newsletter',
     title: 'Newsletter',
     description: 'Stay updated with our latest insights on biotech and healthcare investing.',
+    href: '/newsletter/bruin-biotech-newsletter.pdf',
   },
   {
     id: 'portfolio',
@@ -36,9 +37,20 @@ export function ComingSoonSection() {
               <p className="text-[var(--muted)] mb-6">
                 {section.description}
               </p>
-              <span className="inline-block px-4 py-2 bg-[var(--accent)]/10 text-[var(--accent)] rounded-full text-sm font-medium">
-                Coming Soon
-              </span>
+              {section.href ? (
+                <a
+                  href={section.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-4 py-2 bg-[var(--accent)]/10 text-[var(--accent)] hover:bg-[var(--accent)]/20 rounded-full text-sm font-medium transition-colors"
+                >
+                  Read the Latest Issue
+                </a>
+              ) : (
+                <span className="inline-block px-4 py-2 bg-[var(--accent)]/10 text-[var(--accent)] rounded-full text-sm font-medium">
+                  Coming Soon
+                </span>
+              )}
             </motion.div>
           ))}
         </div>
