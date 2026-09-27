@@ -42,7 +42,7 @@ export function ComingSoonSection() {
                   href={section.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block px-4 py-2 bg-[var(--accent)]/10 text-[var(--accent)] hover:bg-[var(--accent)]/20 rounded-full text-sm font-medium transition-colors"
+                  className="text-[var(--color-primary)] underline underline-offset-4 text-sm font-medium"
                 >
                   Read the Latest Issue
                 </a>
