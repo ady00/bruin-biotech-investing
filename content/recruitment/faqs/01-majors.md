@@ -1,5 +1,5 @@
 ---
-question: What majors do you accept?
+question: What majors do you accept currently?
 order: 1
 ---
 
