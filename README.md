@@ -24,7 +24,30 @@ about is making the aforementioned edits (which I go into more detail below) –
 NOT touch any other files. If the site fails to update or breaks entirely,
 contact Advay at [advayb2018 at gmail dot com].
 
+## Admin portal (easiest way to edit)
+
+Go to **/admin** on the website (it isn't linked anywhere) and log in with the admin password.
+From there you can add, edit, or delete newsletters, team members, placements, recruiting
+timeline events, FAQs, and stock pitches, open or close applications, and swap the Google Form
+link for the "Apply Now" button. You can also upload headshots and PDFs (photos are shrunk
+automatically; PDFs must be under 3 MB).
+
+Edits are saved as drafts until you press **Publish changes**. Everything you publish together
+goes out as ONE update, so make all of your edits first and then publish once. The live site
+updates 3-5 minutes later.
+
+**One-time setup (whoever manages Vercel):** in Vercel → Project → Settings → Environment
+Variables, add:
+- `ADMIN_PASSWORD`: the admin password
+- `GITHUB_TOKEN`: a GitHub fine-grained token with **Contents: Read and write** access to this
+  repo only (GitHub → Settings → Developer settings → Fine-grained tokens)
+
+Then redeploy. When you run it locally without `GITHUB_TOKEN`, the portal saves to the files on your computer instead.
+
+You can still edit files directly on GitHub using the steps below.
+
 ## Table of Contents
+- [Admin portal](#admin-portal-easiest-way-to-edit)
 - [Getting Started with GitHub](#getting-started-with-github)
 - [Editing Stock Pitches](#editing-stock-pitches)
 - [Editing Team Members (Executive Board)](#editing-team-members)
@@ -338,3 +361,5 @@ If you run into issues, reach out to the Advay at the email above.
 | FAQs | `content/recruitment/faqs/` |
 | Team Images | `public/team/` |
 | Pitch PDFs | `public/pitches/` |
+| Newsletters | `content/newsletters/` |
+| Newsletter PDFs | `public/newsletter/` |

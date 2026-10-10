@@ -1,22 +1,27 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import type { Newsletter } from '@/lib/data/newsletters';
 
-const sections = [
-  {
-    id: 'newsletter',
-    title: 'Newsletter',
-    description: 'Stay updated with our latest insights on biotech and healthcare investing.',
-    href: '/newsletter/bruin-biotech-newsletter.pdf',
-  },
-  {
-    id: 'portfolio',
-    title: 'Investment Portfolio',
-    description: 'Track our investment thesis and portfolio performance.',
-  },
-];
+export function ComingSoonSection({ newsletters }: { newsletters: Newsletter[] }) {
+  const [latest, ...past] = newsletters;
+  const sections = [
+    {
+      id: 'newsletter',
+      title: 'Newsletter',
+      description: 'Stay updated with our latest insights on biotech and healthcare investing.',
+      href: latest?.pdfUrl,
+      past,
+    },
+    {
+      id: 'portfolio',
+      title: 'Investment Portfolio',
+      description: 'Track our investment thesis and portfolio performance.',
+      href: undefined,
+      past: [],
+    },
+  ];
 
-export function ComingSoonSection() {
   return (
     <section className="py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -50,6 +55,27 @@ export function ComingSoonSection() {
                 <span className="inline-block px-4 py-2 bg-[var(--accent)]/10 text-[var(--accent)] rounded-full text-sm font-medium">
                   Coming Soon
                 </span>
+              )}
+              {section.past.length > 0 && (
+                <div className="mt-6 pt-4 border-t border-[var(--border)]">
+                  <p className="text-xs uppercase tracking-wide text-[var(--muted)] mb-2">
+                    Past Issues
+                  </p>
+                  <ul className="space-y-1">
+                    {section.past.map((issue) => (
+                      <li key={issue.pdfUrl + issue.date}>
+                        <a
+                          href={issue.pdfUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm text-[var(--muted)] hover:text-[var(--color-primary)] underline underline-offset-4"
+                        >
+                          {issue.title}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               )}
             </motion.div>
           ))}
