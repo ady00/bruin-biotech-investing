@@ -101,7 +101,7 @@ Write a brief 1-2 sentence summary of the investment thesis here.
 **Field explanations:**
 - `company`: Full company name (e.g., "Pfizer Inc.")
 - `ticker`: Stock ticker symbol (e.g., "PFE")
-- `thesis`: Either `Long` or `Short`
+- `thesis`: `Long`, `Short`, or `Hold`
 - `date`: Month and year (e.g., "March 2025")
 - `author`: Name of the analyst(s)
 - `pdfUrl`: Path to the PDF file (see [Adding Images](#adding-images) for uploading)

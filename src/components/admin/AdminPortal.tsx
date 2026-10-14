@@ -150,7 +150,7 @@ const SECTIONS: Section[] = [
     fields: [
       { key: 'company', label: 'Company', hint: 'e.g. Pfizer Inc.' },
       { key: 'ticker', label: 'Ticker' },
-      { key: 'thesis', label: 'Thesis', type: 'select', options: ['Long', 'Short'] },
+      { key: 'thesis', label: 'Thesis', type: 'select', options: ['Long', 'Short', 'Hold'] },
       { key: 'date', label: 'Date', hint: 'e.g. March 2025' },
       { key: 'author', label: 'Author(s)' },
       { key: 'pdfUrl', label: 'Pitch PDF', type: 'file', dir: 'pitches', accept: 'application/pdf' },

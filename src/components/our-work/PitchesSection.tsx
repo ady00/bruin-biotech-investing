@@ -3,7 +3,7 @@
 import { motion, Variants } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { FileText, Download, TrendingUp, TrendingDown } from 'lucide-react';
+import { FileText, Download, TrendingUp, TrendingDown, Minus } from 'lucide-react';
 import type { StockPitch } from '@/lib/data/pitches';
 
 const containerVariants: Variants = {
@@ -66,11 +66,15 @@ export function PitchesSection({ pitches }: { pitches: StockPitch[] }) {
                       className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-medium ${
                         pitch.thesis === 'Long'
                           ? 'bg-green-500/10 text-green-500'
-                          : 'bg-red-500/10 text-red-500'
+                          : pitch.thesis === 'Hold'
+                            ? 'bg-zinc-500/10 text-[var(--muted)]'
+                            : 'bg-red-500/10 text-red-500'
                       }`}
                     >
                       {pitch.thesis === 'Long' ? (
                         <TrendingUp className="w-4 h-4" />
+                      ) : pitch.thesis === 'Hold' ? (
+                        <Minus className="w-4 h-4" />
                       ) : (
                         <TrendingDown className="w-4 h-4" />
                       )}

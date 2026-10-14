@@ -6,7 +6,7 @@ export interface StockPitch {
   id: string;
   company: string;
   ticker: string;
-  thesis: 'Long' | 'Short';
+  thesis: 'Long' | 'Short' | 'Hold';
   date: string;
   author: string;
   summary: string;
@@ -33,7 +33,7 @@ export function getAllPitches(): StockPitch[] {
         id: String(index + 1),
         company: data.company || '',
         ticker: data.ticker || '',
-        thesis: data.thesis as 'Long' | 'Short',
+        thesis: data.thesis as 'Long' | 'Short' | 'Hold',
         date: data.date || '',
         author: data.author || '',
         summary: content.trim(),

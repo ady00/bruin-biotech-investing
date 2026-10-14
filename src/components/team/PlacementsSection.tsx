@@ -13,7 +13,7 @@ export function PlacementsSection({
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
-  const availableYears = Object.keys(placements).sort();
+  const availableYears = Object.keys(placements).sort().reverse(); // newest year first
   const [selectedYear, setSelectedYear] = useState(availableYears[0] || '2026');
 
   return (
