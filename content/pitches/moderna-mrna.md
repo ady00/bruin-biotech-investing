@@ -1,10 +1,10 @@
 ---
-company: Moderna Inc.
-ticker: MRNA
+company: Ultragenyx Pharmaceutical
+ticker: RARE
 thesis: Long
-date: March 2025
+date: May 2026
 author: Research Team
-pdfUrl: /pitches/sample-pitch.pdf
+pdfUrl: /pitches/bbi-investment-memos-ultragenyx.pdf
 ---
 
-mRNA platform potential extends beyond COVID-19 vaccines into oncology and rare diseases, with significant pipeline catalysts expected in 2025.
+We rate Ultragenyx a HOLD with a price target of $20.47, implying ~3% upside.
