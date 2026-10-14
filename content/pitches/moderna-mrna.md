@@ -1,7 +1,7 @@
 ---
 company: Ultragenyx Pharmaceutical
 ticker: RARE
-thesis: Long
+thesis: Hold
 date: May 2026
 author: Research Team
 pdfUrl: /pitches/bbi-investment-memos-ultragenyx.pdf
