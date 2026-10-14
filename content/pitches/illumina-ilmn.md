@@ -1,10 +1,11 @@
 ---
-company: Illumina Inc.
-ticker: ILMN
+company: Erasca
+ticker: ERAS
 thesis: Long
-date: February 2025
+date: May 2026
 author: Research Team
-pdfUrl: /pitches/sample-pitch.pdf
+pdfUrl: /pitches/bbi-investment-memos-erasca.pdf
 ---
 
-Market leader in next-generation sequencing with strong competitive moat and expanding TAM in clinical diagnostics.
+We recommend a LONG position in Erasca with a 12-month price target of $15.10, implying
+33% upside.
