@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import type { Newsletter } from '@/lib/data/newsletters';
 
@@ -17,7 +18,7 @@ export function ComingSoonSection({ newsletters }: { newsletters: Newsletter[] }
       id: 'portfolio',
       title: 'Investment Portfolio',
       description: 'Track our investment thesis and portfolio performance.',
-      href: undefined,
+      href: '/our-work/pitches',
       past: [],
     },
   ];
@@ -42,7 +43,14 @@ export function ComingSoonSection({ newsletters }: { newsletters: Newsletter[] }
               <p className="text-[var(--muted)] mb-6">
                 {section.description}
               </p>
-              {section.href ? (
+              {section.href?.startsWith('/our-work/') ? (
+                <Link
+                  href={section.href}
+                  className="text-[var(--color-primary)] underline underline-offset-4 text-sm font-medium"
+                >
+                  Read the Latest Issue
+                </Link>
+              ) : section.href ? (
                 <a
                   href={section.href}
                   target="_blank"

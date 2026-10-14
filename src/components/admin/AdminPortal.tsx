@@ -156,7 +156,7 @@ const SECTIONS: Section[] = [
       { key: 'pdfUrl', label: 'Pitch PDF', type: 'file', dir: 'pitches', accept: 'application/pdf' },
     ],
     body: 'Summary (1-2 sentences)',
-    hint: 'Note: pitches are not currently displayed anywhere on the public site.',
+    hint: 'Shown on the Investment Portfolio page (/our-work/pitches), newest first.',
   },
 ];
 
