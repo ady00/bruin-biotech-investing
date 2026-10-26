@@ -109,6 +109,13 @@ async function commit(changes: Change[], message: string) {
 export async function GET(request: Request) {
   if (!authorized(request)) return Response.json({ error: 'Wrong password' }, { status: 401 });
   try {
+    // ?deploy: has Vercel finished deploying the latest commit? (Vercel reports back to GitHub)
+    if (new URL(request.url).searchParams.has('deploy')) {
+      if (!TOKEN) return Response.json({ state: 'local' });
+      const { state, statuses } = await gh(`/commits/${BRANCH}/status`);
+      const vercel = statuses.find((s: { context: string }) => s.context.startsWith('Vercel'));
+      return Response.json({ state: vercel?.state || state, description: vercel?.description || '', url: vercel?.target_url || '' });
+    }
     const files = await listFiles();
     const docs = await Promise.all(
       files

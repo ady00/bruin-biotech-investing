@@ -354,6 +354,8 @@ export function AdminPortal() {
   const [openPath, setOpenPath] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
   const [notice, setNotice] = useState<{ text: string; error?: boolean } | null>(null);
+  const [deploy, setDeploy] = useState<{ state: string; description?: string; url?: string } | null>(null);
+  const [deployTick, setDeployTick] = useState(0);
 
   const pending = docs.filter((d) => d.status).length + uploads.length;
 
@@ -390,6 +392,26 @@ export function AdminPortal() {
     const saved = sessionStorage.getItem(PASSWORD_KEY);
     if (saved) load(saved);
   }, []);
+
+  // Show whether the latest publish actually went live; poll while Vercel is still building
+  useEffect(() => {
+    if (!authed || mode !== 'github') return;
+    let stopped = false;
+    let tries = 0;
+    let timer: ReturnType<typeof setTimeout>;
+    async function check() {
+      const res = await fetch('/api/admin?deploy', { headers: { 'x-admin-password': password } }).catch(() => null);
+      const json = res?.ok ? await res.json() : null;
+      if (stopped || !json) return;
+      setDeploy(json);
+      if (json.state === 'pending' && ++tries < 40) timer = setTimeout(check, 15000);
+    }
+    timer = setTimeout(check, 0);
+    return () => {
+      stopped = true;
+      clearTimeout(timer);
+    };
+  }, [authed, mode, password, deployTick]);
 
   // Warn before leaving with unpublished edits
   useEffect(() => {
@@ -506,8 +528,10 @@ export function AdminPortal() {
       setOpenPath(null);
       if (await load(password)) {
         setNotice({
-          text: mode === 'github' ? 'Published! The live site will update in about 3–5 minutes.' : 'Saved to local files.',
+          text: mode === 'github' ? 'Published! Deploying to the live site now; watch the status at the top.' : 'Saved to local files.',
         });
+        setDeploy({ state: 'pending' });
+        setDeployTick((t) => t + 1);
       }
     } finally {
       setBusy(false);
@@ -562,6 +586,26 @@ export function AdminPortal() {
       <div className="flex flex-wrap items-center gap-3 mb-6">
         <h1 className="font-heading text-3xl font-bold mr-auto">Admin</h1>
         {mode === 'local' && <span className="text-xs text-[var(--muted)]">Local mode: saves to files on this computer</span>}
+        {deploy && deploy.state !== 'local' && (
+          <span
+            role="status"
+            className={`text-sm ${deploy.state === 'failure' || deploy.state === 'error' ? 'text-[var(--color-primary)] font-medium' : 'text-[var(--muted)]'}`}
+          >
+            {deploy.state === 'success'
+              ? '✓ Live site is up to date'
+              : deploy.state === 'pending'
+                ? 'Deploying to live site…'
+                : 'Last deploy FAILED: the live site has not updated.'}
+            {deploy.url && deploy.state !== 'success' && deploy.state !== 'pending' && (
+              <>
+                {' '}
+                <a href={deploy.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">
+                  Details
+                </a>
+              </>
+            )}
+          </span>
+        )}
         <span className="text-sm text-[var(--muted)]">
           {pending ? `${pending} unpublished change${pending === 1 ? '' : 's'}` : 'All changes published'}
         </span>
